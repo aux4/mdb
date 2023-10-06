@@ -1,34 +1,39 @@
 {
-  "name": "@aux4/",
+  "name": "@aux4/mdb",
   "version": "0.0.1",
-  "description": "",
+  "description": "Parse MS Access mdb file",
   "main": "index.js",
   "preferGlobal": true,
   "bin": {
-    "aux4-": "bin/executable.js"
+    "aux4-mdb": "bin/executable.js"
   },
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/aux4/template.git"
+    "url": "git+ssh://git@github.com/aux4/mdb.git"
   },
   "keywords": [
     "aux4",
-    "cli"
+    "cli",
+    "msaccess",
+    "mdb",
+    "db"
   ],
   "author": "Aux4 Team",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/aux4/template/issues"
+    "url": "https://github.com/aux4/mdb/issues"
   },
   "homepage": "https://aux4.io",
   "funding": "https://aux4.io/donate",
   "dependencies": {
     "@aux4/config": "^1.0.2",
     "@aux4/engine": "^1.0.31",
-    "@aux4/input": "^0.0.3"
+    "@aux4/input": "^0.0.3",
+    "colors": "^1.4.0",
+    "mdb-reader": "^2.2.6"
   },
   "devDependencies": {
     "jest": "^29.7.0"

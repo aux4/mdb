@@ -1,6 +1,6 @@
 {
   "name": "@aux4/mdb",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Parse MS Access mdb file",
   "main": "index.js",
   "preferGlobal": true,

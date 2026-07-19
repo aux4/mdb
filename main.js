@@ -102,7 +102,7 @@ async function main() {
       case 'tables':
         await listTables(args);
         break;
-      case 'desc':
+      case 'describe':
         await describeTable(args);
         break;
       case 'data':

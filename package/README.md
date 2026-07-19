@@ -17,7 +17,7 @@ aux4 aux4 pkger install aux4/mdb
 aux4 mdb tables --file inventory.mdb
 
 # Inspect a table's schema
-aux4 mdb desc --file inventory.mdb --table Products
+aux4 mdb describe --file inventory.mdb --table Products
 
 # Read the first 10 rows of a table
 aux4 mdb data --file inventory.mdb --table Products --limit 10
@@ -28,7 +28,7 @@ aux4 mdb data --file inventory.mdb --table Products --limit 10
 ### Commands
 
 - [`aux4 mdb tables`](./commands/mdb/tables) - List the tables in an Access database as a JSON array.
-- [`aux4 mdb desc`](./commands/mdb/desc) - Describe a table's schema as a JSON object.
+- [`aux4 mdb describe`](./commands/mdb/describe) - Describe a table's schema as a JSON object (alias: `aux4 mdb desc`).
 - [`aux4 mdb data`](./commands/mdb/data) - Read rows from a table as a JSON array.
 - [`aux4 mdb stream`](./commands/mdb/stream) - Stream rows from a table as newline-delimited JSON (NDJSON).
 
@@ -70,12 +70,12 @@ aux4 mdb tables --file inventory.mdb --showCount true
 aux4 mdb tables --file inventory.mdb --normalTables false --systemTables true
 ```
 
-### aux4 mdb desc
+### aux4 mdb describe
 
-Describe a table's schema, including its columns and row count.
+Describe a table's schema, including its columns and row count. Also available under the shorter alias `aux4 mdb desc`.
 
 ```bash
-aux4 mdb desc \
+aux4 mdb describe \
   --file <file.mdb> \
   --table <table> \
   [--password <password>]
@@ -90,6 +90,9 @@ Options:
 Example:
 
 ```bash
+aux4 mdb describe --file inventory.mdb --table Products
+
+# or, using the alias
 aux4 mdb desc --file inventory.mdb --table Products
 ```
 

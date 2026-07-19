@@ -80,12 +80,38 @@
           }
         },
         {
-          "name": "desc",
+          "name": "describe",
           "execute": [
-            "node ${packageDir}/lib/aux4-mdb.mjs desc values(file, password, table)"
+            "node ${packageDir}/lib/aux4-mdb.mjs describe values(file, password, table)"
           ],
           "help": {
             "text": "Describe a table's schema as a JSON object",
+            "variables": [
+              {
+                "name": "file",
+                "text": "Path to the .mdb file",
+                "arg": true
+              },
+              {
+                "name": "password",
+                "text": "Database password",
+                "default": "",
+                "hide": true
+              },
+              {
+                "name": "table",
+                "text": "Table name to describe"
+              }
+            ]
+          }
+        },
+        {
+          "name": "desc",
+          "execute": [
+            "aux4 mdb describe params(file, password, table)"
+          ],
+          "help": {
+            "text": "Describe a table's schema as a JSON object (alias of describe)",
             "variables": [
               {
                 "name": "file",

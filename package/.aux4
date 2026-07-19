@@ -1,7 +1,7 @@
 {
   "scope": "aux4",
   "name": "mdb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Microsoft Access (.mdb) database tools",
   "license": "Apache-2.0",
   "tags": [

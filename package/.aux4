@@ -1,0 +1,193 @@
+{
+  "scope": "aux4",
+  "name": "mdb",
+  "version": "1.0.0",
+  "description": "Microsoft Access (.mdb) database tools",
+  "license": "Apache-2.0",
+  "tags": [
+    "mdb",
+    "access",
+    "database",
+    "microsoft"
+  ],
+  "system": [
+    [
+      "test:node --version",
+      "brew:node",
+      "apt:nodejs",
+      "dnf:nodejs",
+      "apk:nodejs"
+    ]
+  ],
+  "profiles": [
+    {
+      "name": "main",
+      "commands": [
+        {
+          "name": "mdb",
+          "execute": [
+            "profile:mdb"
+          ],
+          "help": {
+            "text": "Microsoft Access (.mdb) database tools"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mdb",
+      "commands": [
+        {
+          "name": "tables",
+          "execute": [
+            "node ${packageDir}/lib/aux4-mdb.mjs tables values(file, password, normalTables, systemTables, linkedTables, showCount)"
+          ],
+          "help": {
+            "text": "List tables in an Access database as a JSON array",
+            "variables": [
+              {
+                "name": "file",
+                "text": "Path to the .mdb file",
+                "arg": true
+              },
+              {
+                "name": "password",
+                "text": "Database password",
+                "default": "",
+                "hide": true
+              },
+              {
+                "name": "normalTables",
+                "text": "Include normal tables",
+                "default": "true"
+              },
+              {
+                "name": "systemTables",
+                "text": "Include system tables",
+                "default": "false"
+              },
+              {
+                "name": "linkedTables",
+                "text": "Include linked tables",
+                "default": "false"
+              },
+              {
+                "name": "showCount",
+                "text": "Include the row count for each table",
+                "default": "false"
+              }
+            ]
+          }
+        },
+        {
+          "name": "desc",
+          "execute": [
+            "node ${packageDir}/lib/aux4-mdb.mjs desc values(file, password, table)"
+          ],
+          "help": {
+            "text": "Describe a table's schema as a JSON object",
+            "variables": [
+              {
+                "name": "file",
+                "text": "Path to the .mdb file",
+                "arg": true
+              },
+              {
+                "name": "password",
+                "text": "Database password",
+                "default": "",
+                "hide": true
+              },
+              {
+                "name": "table",
+                "text": "Table name to describe"
+              }
+            ]
+          }
+        },
+        {
+          "name": "data",
+          "execute": [
+            "node ${packageDir}/lib/aux4-mdb.mjs data values(file, password, table, columns, offset, limit)"
+          ],
+          "help": {
+            "text": "Read rows from a table as a JSON array",
+            "variables": [
+              {
+                "name": "file",
+                "text": "Path to the .mdb file",
+                "arg": true
+              },
+              {
+                "name": "password",
+                "text": "Database password",
+                "default": "",
+                "hide": true
+              },
+              {
+                "name": "table",
+                "text": "Table name to read"
+              },
+              {
+                "name": "columns",
+                "text": "Comma-separated list of columns to return",
+                "default": ""
+              },
+              {
+                "name": "offset",
+                "text": "Number of rows to skip",
+                "default": ""
+              },
+              {
+                "name": "limit",
+                "text": "Maximum number of rows to return",
+                "default": ""
+              }
+            ]
+          }
+        },
+        {
+          "name": "stream",
+          "execute": [
+            "node ${packageDir}/lib/aux4-mdb.mjs stream values(file, password, table, columns, offset, limit)"
+          ],
+          "help": {
+            "text": "Stream rows from a table as newline-delimited JSON (NDJSON)",
+            "variables": [
+              {
+                "name": "file",
+                "text": "Path to the .mdb file",
+                "arg": true
+              },
+              {
+                "name": "password",
+                "text": "Database password",
+                "default": "",
+                "hide": true
+              },
+              {
+                "name": "table",
+                "text": "Table name to read"
+              },
+              {
+                "name": "columns",
+                "text": "Comma-separated list of columns to return",
+                "default": ""
+              },
+              {
+                "name": "offset",
+                "text": "Number of rows to skip",
+                "default": ""
+              },
+              {
+                "name": "limit",
+                "text": "Maximum number of rows to return",
+                "default": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,41 +1,28 @@
 {
-  "name": "@aux4/mdb",
-  "version": "0.0.2",
-  "description": "Parse MS Access mdb file",
-  "main": "index.js",
-  "preferGlobal": true,
+  "name": "aux4-mdb",
+  "version": "1.0.0",
+  "description": "Microsoft Access (.mdb) database tools using mdb-reader",
+  "type": "module",
+  "main": "main.js",
   "bin": {
-    "aux4-mdb": "bin/executable.js"
+    "aux4-mdb": "./package/lib/aux4-mdb.mjs"
   },
   "scripts": {
-    "test": "jest"
+    "build": "rollup -c",
+    "dev": "node main.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/aux4/mdb.git"
-  },
-  "keywords": [
-    "aux4",
-    "cli",
-    "msaccess",
-    "mdb",
-    "db"
-  ],
-  "author": "Aux4 Team",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/aux4/mdb/issues"
-  },
-  "homepage": "https://aux4.io",
-  "funding": "https://aux4.io/donate",
   "dependencies": {
-    "@aux4/config": "^1.0.2",
-    "@aux4/engine": "^1.0.31",
-    "@aux4/input": "^0.0.3",
-    "colors": "^1.4.0",
-    "mdb-reader": "^2.2.6"
+    "mdb-reader": "^3.0.0"
   },
   "devDependencies": {
-    "jest": "^29.7.0"
-  }
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "rollup": "^4.28.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "",
+  "license": "Apache-2.0"
 }

@@ -1,34 +1,23 @@
-# @aux4/mdb
-Parse MS Access mdb file
+# aux4/mdb
 
-![npm](https://img.shields.io/npm/v/@aux4/mdb)
+Microsoft Access (.mdb) database tools for the aux4 ecosystem, powered by [mdb-reader](https://www.npmjs.com/package/mdb-reader).
 
-## Install
+- [aux4 hub](https://hub.aux4.io/r/public/packages/aux4/mdb)
+- [README.md](./package/README.md)
+
+## Development
 
 ```bash
-npm install -g @aux4/mdb
+# Install dependencies
+npm install
+
+# Build the bundle
+npm run build
+
+# Run in development mode
+npm run dev
 ```
 
-## Usage
-```bash
-aux4-mdb <command> [options]
-  tables   list tables
-             - file mdb file
-             - password mdb password
-             - normalTables [true] list normal tables
-             - systemTables [false] list system tables
-             - linkedTables [false] list linked tables
-             - showCount [false] show row count
-    desc   describe table
-             - file mdb file
-             - password mdb password
-             - table table name
-    data   get table data
-             - file mdb file
-             - password mdb password
-             - table table name
-             - columns columns comma separated
-             - offset offset
-             - limit limit
+## License
 
-```
+Apache-2.0

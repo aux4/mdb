@@ -1,6 +1,6 @@
 #### Description
 
-The `describe` command describes the schema of a single table and prints it as a JSON object. The result includes the table `name`, its `rowCount`, and a `columns` array where each column reports its `name`, `type`, `size`, and `nullable` flag (plus `precision` and `scale` for numeric types). Use it to understand a table's structure before selecting columns with `aux4 mdb data`. The command is also available under the shorter alias `aux4 mdb desc`.
+The `describe` command describes the schema of a single table and prints it as a JSON object. The result includes the table `name`, its `rowCount`, and a `columns` array where each column reports its `name`, `type`, `size`, and `nullable` flag (plus `precision` and `scale` for numeric types). Use it to understand a table's structure before selecting columns with `aux4 mdb data`.
 
 #### Usage
 
